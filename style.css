@@ -1,7 +1,9 @@
 body {
-  font-family: 'Noto Sans JP', sans-serif;
-  background-color: #f9f9f9;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  background-color: #fffafc;
   color: #333;
+  line-height: 1.8;
+  padding: 20px;
 }
 
 h1 {
