@@ -210,7 +210,7 @@ footer {
 
   /* ナビは横並び維持、折り返し可 */
   nav ul {
-    flex-direction: row; /* 横並び */
+    flex-direction: wrap; /* 折り返し可だが */
     justify-content: center;
     flex-wrap: wrap;     /* 折り返し対応 */
     gap: 0.8rem;
@@ -219,5 +219,6 @@ footer {
   nav ul li a {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
+    white-space: nowrap; /* テキストが長い場合は改行 */
   }
 }
