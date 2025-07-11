@@ -5,6 +5,7 @@
   box-sizing: border-box;
 }
 
+/* 全体フォントと背景 */
 body {
   font-family: 'Zen Maru Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f0f0f0;
@@ -20,116 +21,25 @@ nav {
   top: 0;
   z-index: 100;
 }
+
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  gap: 2rem;
-}
-nav ul li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-  transition: color 0.3s ease;
-}
-nav ul li a:hover {
-  color: #ff6600;
-}
-
-/* メインコンテンツ */
-main {
-  max-width: 900px;
-  margin: 2rem auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-}
-
-h1, h2 {
-  margin-bottom: 1rem;
-}
-
-/* 画像ギャラリー */
-.gallery {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  flex-wrap: wrap;   /* ← これで折り返し対応 */
   gap: 1rem;
-  margin-top: 1rem;
-}
-.gallery img {
-  width: 100%;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  object-fit: cover;
-  height: 180px;
-  transition: transform 0.3s ease;
-  cursor: pointer;
-}
-.gallery img:hover {
-  transform: scale(1.05);
-}
-
-footer {
-  text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-  color: #666;
-  font-size: 0.9rem;
-}
-
-/* レスポンシブ対応 */
-@media (max-width: 600px) {
-  nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-  main {
-    margin: 1rem;
-    padding: 1rem;
-  }
-}
-/* スマホ対応（幅600px以下） */
-* {
+  padding: 0;
   margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-/* ボディ基本設定 */
-body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f0f0;
-  color: #333;
-  line-height: 1.6;
-}
-
-/* ナビゲーションバー */
-nav {
-  background-color: #333;
-  padding: 1rem 2rem;
-  position: sticky;
-  top: 0;
-  z-index: 100;
-}
-
-nav ul {
-  list-style: none;
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap; /* 狭い画面で折り返し */
-  gap: 1rem;
-  padding: 0;
 }
 
 nav ul li a {
+  display: inline-block;
+  padding: 0.5rem 1rem;
   color: white;
   text-decoration: none;
   font-weight: bold;
-  padding: 0.5rem 1rem;
-  display: inline-block;
   font-size: 1rem;
-  white-space: nowrap; /* テキスト改行しない */
+  white-space: nowrap;
   transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 5px;
 }
@@ -140,7 +50,7 @@ nav ul li a:focus {
   color: white;
 }
 
-/* メインコンテンツ */
+/* メイン */
 main {
   max-width: 900px;
   margin: 2rem auto;
@@ -154,7 +64,7 @@ h1, h2 {
   margin-bottom: 1rem;
 }
 
-/* 画像ギャラリー */
+/* ギャラリー */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -164,10 +74,10 @@ h1, h2 {
 
 .gallery img {
   width: 100%;
+  height: 180px;
+  object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  object-fit: cover;
-  height: 180px;
   transition: transform 0.3s ease;
   cursor: pointer;
 }
@@ -208,17 +118,9 @@ footer {
     height: auto;
   }
 
-  /* ナビは横並び維持、折り返し可 */
-  nav ul {
-    flex-direction: wrap; /* 折り返し可だが */
-    justify-content: center;
-    flex-wrap: wrap;     /* 折り返し対応 */
-    gap: 0.8rem;
-  }
-
   nav ul li a {
     font-size: 0.85rem;
     padding: 0.4rem 0.6rem;
-    white-space: nowrap; /* テキストが長い場合は改行 */
   }
 }
+
