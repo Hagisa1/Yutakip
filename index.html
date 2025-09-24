@@ -7,6 +7,9 @@
   <link rel="icon" href="yutakip.png" type="image/png" />
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* about.html と同じフェードイン＋アニメーション CSS をコピー */
+  </style>
 </head>
 <body>
   <nav>
@@ -24,11 +27,11 @@
       <p>創作・発信活動を行うグループ「ゆたキプ」の公式サイトです。</p>
     </section>
 
-    <!-- ギャラリー例 -->
-    <section class="gallery">
-      <img src="example1.jpg" alt="ギャラリー1">
-      <img src="example2.jpg" alt="ギャラリー2">
-      <img src="example3.jpg" alt="ギャラリー3">
+    <section class="gallery" style="margin-top: 2rem;">
+      <h2>ギャラリー</h2>
+      <img src="example1.jpg" alt="作品1" class="member">
+      <img src="example2.jpg" alt="作品2" class="member">
+      <img src="example3.jpg" alt="作品3" class="member">
     </section>
   </main>
 
@@ -37,11 +40,13 @@
   </footer>
 
   <script>
-    window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('fade-in'); });
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
     document.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function(e) {
         const url = new URL(this.href);
-        if(url.origin === window.location.origin && url.pathname !== window.location.pathname) {
+        if(url.origin === window.location.origin && url.pathname !== window.location.pathname){
           e.preventDefault();
           document.body.style.opacity = 0;
           setTimeout(() => { window.location = this.href; }, 600);

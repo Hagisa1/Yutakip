@@ -3,74 +3,55 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
-  <title>Works - ゆたキプ</title>
-
-  <!-- ファビコン（ブラウザタブのアイコン） -->
+  <title>活動内容 - ゆたキプ</title>
   <link rel="icon" href="yutakip.png" type="image/png" />
-
-  <!-- Google Fonts（かわいいフォント） -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
-
-  <!-- 外部CSSファイルの読み込み -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* about.html と同じフェードイン＋アニメーション CSS をコピー */
+  </style>
 </head>
 <body>
-
-  <!-- ナビゲーションメニュー（全ページ共通） -->
   <nav>
-  <ul>
-    <li><a href="index.html">ホーム</a></li>
-    <li><a href="about.html">メンバー</a></li>
-    <li><a href="works.html">活動内容</a></li>
-    <li><a href="contact.html">お問い合わせ</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="works.html">活動内容</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
 
-  <!-- メインコンテンツ：作品紹介 -->
   <main>
-    <section>
-      <h1>活動内容</h1>
-      <p>予定中・・・</p>
+    <h1>活動内容</h1>
+    <p>ゆたキプのメンバーが行う創作活動やイベント情報などを紹介します。</p>
 
-      <!-- ギャラリー風に画像を並べる -->
-      <div class="gallery">
-        <img src="https://via.placeholder.com/400x300?text=作品1" alt="写真1" />
-        <img src="https://via.placeholder.com/400x300?text=作品2" alt="写真2" />
-        <img src="https://via.placeholder.com/400x300?text=作品3" alt="写真3" />
-        <img src="https://via.placeholder.com/400x300?text=作品4" alt="写真4" />
-      </div>
-
-      <!-- 実際の作品画像がある場合は src を置き換えてね -->
+    <section class="gallery" style="margin-top: 2rem;">
+      <h2>作品一覧</h2>
+      <img src="works1.jpg" alt="作品1" class="member">
+      <img src="works2.jpg" alt="作品2" class="member">
+      <img src="works3.jpg" alt="作品3" class="member">
     </section>
   </main>
 
-  <!-- フッター -->
   <footer>
     &copy;ゆったりキプフェル眺める会
   </footer>
 
- <!-- フェードイン・フェードアウト用JS -->
-<script>
-  // ページ読み込み時にフェードイン
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-
-  // 内部リンククリック時にフェードアウト → ページ遷移
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const url = new URL(this.href);
-      if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
-        e.preventDefault();
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-          window.location = this.href;
-        }, 600); // CSSのトランジション時間に合わせる
-      }
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
     });
-  });
-</script>
-
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const url = new URL(this.href);
+        if(url.origin === window.location.origin && url.pathname !== window.location.pathname){
+          e.preventDefault();
+          document.body.style.opacity = 0;
+          setTimeout(() => { window.location = this.href; }, 600);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
+
