@@ -3,29 +3,66 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
   <title>About - ゆたキプ</title>
 
   <!-- ファビコン -->
   <link rel="icon" href="yutakip.png" type="image/png" />
 
-  <!-- Google Fonts（かわいらしいフォント） -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
 
   <!-- 外部CSS -->
   <link rel="stylesheet" href="style.css" />
+
+  <!-- フェードイン用 CSS -->
+  <style>
+    body {
+      opacity: 0;
+      transition: opacity 0.6s ease-in-out;
+    }
+    body.fade-in {
+      opacity: 1;
+    }
+    main {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease-in-out 0.2s, transform 0.6s ease-in-out 0.2s;
+    }
+    body.fade-in main {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    nav {
+      opacity: 0;
+      transform: translateY(-10px);
+      transition: opacity 0.6s ease-in-out 0.1s, transform 0.6s ease-in-out 0.1s;
+    }
+    body.fade-in nav {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    footer {
+      opacity: 0;
+      transform: translateY(10px);
+      transition: opacity 0.6s ease-in-out 0.3s, transform 0.6s ease-in-out 0.3s;
+    }
+    body.fade-in footer {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 </head>
 <body>
 
   <!-- ナビゲーション -->
   <nav>
-  <ul>
-    <li><a href="index.html">ホーム</a></li>
-    <li><a href="about.html">メンバー</a></li>
-    <li><a href="works.html">活動内容</a></li>
-    <li><a href="contact.html">お問い合わせ</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="works.html">活動内容</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
 
   <!-- メインエリア -->
   <main>
@@ -37,48 +74,11 @@
     <!-- メンバー紹介セクション -->
     <section style="margin-top: 2rem;">
       <h2>メンバー紹介</h2>
-
       <div class="member">
         <h3>萩沙くるい</h3>
         <p>予定中・・・</p>
       </div>
-
-      <div class="member">
-        <h3>saiku pedo</h3>
-        <p>予定中・・・</p>
-      </div>
-
-      <div class="member">
-        <h3>ぅな太゛</h3>
-        <p>予定中・・・</p>
-      </div>
-
-      <div class="member">
-        <h3>きままあろな</h3>
-        <p>予定中・・・</p>
-      </div>
-
-      <div class="member">
-        <h3>フェル/FEL</h3>
-        <p>予定中・・・</p>
-      </div>
-
-        <div class="member">
-        <h3>ぱむ-superMOOON</h3>
-        <p>予定中・・・</p>
-      </div>
-
-      <div class="member">
-        <h3>塩こんぶ_0902</h3>
-        <p>予定中・・・</p>
-      </div>
-
-      <div class="member">
-        <h3>rea0117</h3>
-        <p>予定中・・・</p>
-      </div>
-
-      <!-- メンバーを増やしたい場合は、上と同じように追加すればOK！ -->
+      <!-- 他のメンバーも同じ構造 -->
     </section>
   </main>
 
@@ -87,27 +87,26 @@
     &copy;ゆったりキプフェル眺める会
   </footer>
 
- <!-- フェードイン・フェードアウト用JS -->
-<script>
-  // ページ読み込み時にフェードイン
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-
-  // 内部リンククリック時にフェードアウト → ページ遷移
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const url = new URL(this.href);
-      if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
-        e.preventDefault();
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-          window.location = this.href;
-        }, 600); // CSSのトランジション時間に合わせる
-      }
+  <!-- フェードイン・ページ遷移用 JS -->
+  <script>
+    // ページ読み込み時フェードイン
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
     });
-  });
-</script>
 
+    // 内部リンククリック時フェードアウト → 遷移
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const url = new URL(this.href);
+        if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
+          e.preventDefault();
+          document.body.style.opacity = 0;
+          setTimeout(() => {
+            window.location = this.href;
+          }, 600); // CSSトランジション時間に合わせる
+        }
+      });
+    });
+  </script>
 </body>
 </html>
