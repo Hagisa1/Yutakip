@@ -3,64 +3,51 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ゆたキプへようこそ</title>
-
-  <!-- ファビコン（ブラウザのタブに表示されるアイコン） -->
+  <title>ホーム - ゆたキプ</title>
   <link rel="icon" href="yutakip.png" type="image/png" />
-
-  <!-- Google Fonts（かわいい日本語フォント） -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
-
-  <!-- 外部CSS -->
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- ナビゲーションメニュー -->
   <nav>
-  <ul>
-    <li><a href="index.html">ホーム</a></li>
-    <li><a href="about.html">メンバー</a></li>
-    <li><a href="works.html">活動内容</a></li>
-    <li><a href="contact.html">お問い合わせ</a></li>
-  </ul>
-</nav>
+    <ul>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="works.html">活動内容</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
 
-  <!-- メインコンテンツ -->
   <main>
-    <section id="about">
-      <h1>ようこそ、ゆたキプの公式サイトへ</h1>
-      <p>ここではメンバー紹介や作品をご覧いただけます。気ままに活動中🎨🦇</p>
+    <section>
+      <h1>ゆたキプへようこそ</h1>
+      <p>創作・発信活動を行うグループ「ゆたキプ」の公式サイトです。</p>
+    </section>
+
+    <!-- ギャラリー例 -->
+    <section class="gallery">
+      <img src="example1.jpg" alt="ギャラリー1">
+      <img src="example2.jpg" alt="ギャラリー2">
+      <img src="example3.jpg" alt="ギャラリー3">
     </section>
   </main>
 
-  <!-- フッター -->
   <footer>
     &copy;ゆったりキプフェル眺める会
   </footer>
 
- <!-- フェードイン・フェードアウト用JS -->
-<script>
-  // ページ読み込み時にフェードイン
-  window.addEventListener('DOMContentLoaded', () => {
-    document.body.classList.add('fade-in');
-  });
-
-  // 内部リンククリック時にフェードアウト → ページ遷移
-  document.querySelectorAll('a').forEach(link => {
-    link.addEventListener('click', function(e) {
-      const url = new URL(this.href);
-      if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
-        e.preventDefault();
-        document.body.style.opacity = 0;
-        setTimeout(() => {
-          window.location = this.href;
-        }, 600); // CSSのトランジション時間に合わせる
-      }
+  <script>
+    window.addEventListener('DOMContentLoaded', () => { document.body.classList.add('fade-in'); });
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const url = new URL(this.href);
+        if(url.origin === window.location.origin && url.pathname !== window.location.pathname) {
+          e.preventDefault();
+          document.body.style.opacity = 0;
+          setTimeout(() => { window.location = this.href; }, 600);
+        }
+      });
     });
-  });
-</script>
-
+  </script>
 </body>
 </html>
-
