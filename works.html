@@ -48,8 +48,8 @@
         const url = new URL(this.href);
         if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
           e.preventDefault();
-          document.body.style.opacity = 0;
-          setTimeout(() => { window.location = this.href; }, 600);
+          document.body.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)'; document.body.style.opacity = 0;
+          setTimeout(() => { window.location = this.href; }, 700);
         }
       });
     });

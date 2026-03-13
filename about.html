@@ -96,7 +96,7 @@
     <section>
       <span class="hero-label">Members</span>
       <h1><span class="accent">メンバー</span>紹介</h1>
-      <p class="lead">ゆたキプを構成する５人のメンバーです。</p>
+      <p class="lead">ゆたキプを構成する8人のメンバーです。</p>
     </section>
 
     <div class="members-grid">
@@ -116,6 +116,28 @@
           <div class="member-avatar">S</div>
           <div>
             <div class="member-name">saiku pedo</div>
+            <div class="member-status">予定中・・・</div>
+          </div>
+        </div>
+        <div class="member-bio">プロフィール準備中です。お楽しみに！</div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-header">
+          <div class="member-avatar">な</div>
+          <div>
+            <div class="member-name">ぅな太゛</div>
+            <div class="member-status">予定中・・・</div>
+          </div>
+        </div>
+        <div class="member-bio">プロフィール準備中です。お楽しみに！</div>
+      </div>
+
+      <div class="member-card">
+        <div class="member-header">
+          <div class="member-avatar">き</div>
+          <div>
+            <div class="member-name">きままあろな</div>
             <div class="member-status">予定中・・・</div>
           </div>
         </div>
@@ -153,7 +175,19 @@
           </div>
         </div>
         <div class="member-bio">プロフィール準備中です。お楽しみに！</div>
-      </div>ß
+      </div>
+
+      <div class="member-card">
+        <div class="member-header">
+          <div class="member-avatar">R</div>
+          <div>
+            <div class="member-name">rea0117</div>
+            <div class="member-status">予定中・・・</div>
+          </div>
+        </div>
+        <div class="member-bio">プロフィール準備中です。お楽しみに！</div>
+      </div>
+    </div>
   </main>
 
   <footer>
@@ -169,8 +203,8 @@
         const url = new URL(this.href);
         if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
           e.preventDefault();
-          document.body.style.opacity = 0;
-          setTimeout(() => { window.location = this.href; }, 600);
+          document.body.style.transition = 'opacity 0.7s cubic-bezier(0.4, 0, 0.2, 1)'; document.body.style.opacity = 0;
+          setTimeout(() => { window.location = this.href; }, 700);
         }
       });
     });
