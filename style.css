@@ -1,42 +1,84 @@
+/* ===========================
+   ゆたキプ - Modern Style
+   =========================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@400;600&display=swap');
+
+/* -------------------
+   CSS変数
+------------------- */
+:root {
+  --bg: #0f0f0f;
+  --bg2: #161616;
+  --surface: #1e1e1e;
+  --border: rgba(255,255,255,0.08);
+  --accent: #e8c97e;
+  --accent2: #c4a35a;
+  --text: #f0ede8;
+  --muted: #888;
+  --radius: 12px;
+  --nav-height: 64px;
+  --transition: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
 /* -------------------
    リセット
 ------------------- */
-* {
+*, *::before, *::after {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
 /* -------------------
-   全体フォントと背景
+   ベース
 ------------------- */
-body {
-  font-family: 'Zen Maru Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #f0f0f0;
-  color: #333;
-  line-height: 1.6;
+html {
+  scroll-behavior: smooth;
+}
 
-  /* ページ読み込みフェードイン用 */
+body {
+  font-family: 'Zen Maru Gothic', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  min-height: 100vh;
   opacity: 0;
-  transition: opacity 0.6s ease-in-out;
+  transition: opacity 0.7s ease;
+  overflow-x: hidden;
 }
 
 body.fade-in {
   opacity: 1;
 }
 
+/* ノイズ背景 */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
 /* -------------------
-   ナビゲーションバー
+   ナビゲーション
 ------------------- */
 nav {
-  background-color: #333;
-  padding: 1rem 2rem;
-  position: sticky;
+  position: fixed;
   top: 0;
-  z-index: 100;
+  left: 0;
+  right: 0;
+  height: var(--nav-height);
+  background: rgba(15, 15, 15, 0.85);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  z-index: 1000;
   opacity: 0;
-  transform: translateY(-10px);
-  transition: opacity 0.6s ease-in-out 0.1s, transform 0.6s ease-in-out 0.1s;
+  transform: translateY(-8px);
+  transition: opacity 0.6s ease 0.1s, transform 0.6s ease 0.1s;
 }
 
 body.fade-in nav {
@@ -47,45 +89,47 @@ body.fade-in nav {
 nav ul {
   list-style: none;
   display: flex;
+  align-items: center;
   justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-  padding: 0;
-  margin: 0;
+  height: 100%;
+  gap: 0.25rem;
+  padding: 0 2rem;
 }
 
 nav ul li a {
-  display: inline-block;
-  padding: 0.5rem 1rem;
-  color: white;
+  display: inline-flex;
+  align-items: center;
+  padding: 0.45rem 1.1rem;
+  color: var(--muted);
   text-decoration: none;
-  font-weight: bold;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  transition: all 0.25s ease;
   white-space: nowrap;
-  border-radius: 5px;
-  transition: all 0.3s ease;
 }
 
 nav ul li a:hover,
-nav ul li a:focus {
-  background-color: #ff6600;
-  color: white;
-  transform: scale(1.1) rotate(-2deg);
+nav ul li a.active {
+  color: var(--accent);
+  border-color: var(--border);
+  background: rgba(232, 201, 126, 0.08);
 }
 
 /* -------------------
    メイン
 ------------------- */
 main {
-  max-width: 900px;
-  margin: 2rem auto;
-  background: white;
-  padding: 2rem;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  max-width: 860px;
+  margin: 0 auto;
+  padding: calc(var(--nav-height) + 3rem) 1.5rem 4rem;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease-in-out 0.2s, transform 0.6s ease-in-out 0.2s;
+  transform: translateY(16px);
+  transition: opacity 0.7s ease 0.2s, transform 0.7s ease 0.2s;
+  position: relative;
+  z-index: 1;
 }
 
 body.fade-in main {
@@ -94,12 +138,82 @@ body.fade-in main {
 }
 
 /* -------------------
-   メンバー・ギャラリー順番フェード
+   見出し
 ------------------- */
+h1 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+h1 span.accent {
+  color: var(--accent);
+}
+
+h2 {
+  font-family: 'Shippori Mincho', serif;
+  font-size: 1.4rem;
+  font-weight: 600;
+  color: var(--text);
+  margin: 2.5rem 0 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  margin-bottom: 0.25rem;
+  letter-spacing: 0.03em;
+}
+
+p {
+  color: #aaa;
+  font-size: 0.95rem;
+}
+
+/* -------------------
+   セクション
+------------------- */
+section {
+  margin-bottom: 3rem;
+}
+
+.lead {
+  font-size: 1.05rem;
+  color: #bbb;
+  line-height: 1.8;
+  max-width: 600px;
+}
+
+/* -------------------
+   メンバーカード
+------------------- */
+.members-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
 .member {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 1.25rem 1.5rem;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.member:hover {
+  border-color: rgba(232, 201, 126, 0.3);
+  box-shadow: 0 0 24px rgba(232, 201, 126, 0.06);
 }
 
 body.fade-in .member {
@@ -107,39 +221,130 @@ body.fade-in .member {
   transform: translateY(0);
 }
 
-/* 個別遅延 */
 .member:nth-child(1) { transition-delay: 0.3s; }
-.member:nth-child(2) { transition-delay: 0.4s; }
-.member:nth-child(3) { transition-delay: 0.5s; }
-.member:nth-child(4) { transition-delay: 0.6s; }
-.member:nth-child(5) { transition-delay: 0.7s; }
-.member:nth-child(6) { transition-delay: 0.8s; }
-.member:nth-child(7) { transition-delay: 0.9s; }
-.member:nth-child(8) { transition-delay: 1s; }
+.member:nth-child(2) { transition-delay: 0.38s; }
+.member:nth-child(3) { transition-delay: 0.46s; }
+.member:nth-child(4) { transition-delay: 0.54s; }
+.member:nth-child(5) { transition-delay: 0.62s; }
+.member:nth-child(6) { transition-delay: 0.70s; }
+.member:nth-child(7) { transition-delay: 0.78s; }
+.member:nth-child(8) { transition-delay: 0.86s; }
+
+.member p {
+  font-size: 0.82rem;
+  color: var(--muted);
+  margin-top: 0.2rem;
+}
 
 /* -------------------
    ギャラリー
 ------------------- */
 .gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1rem;
-  margin-top: 1rem;
+  margin-top: 1.5rem;
 }
 
 .gallery img {
   width: 100%;
-  height: 180px;
+  height: 200px;
   object-fit: cover;
-  border-radius: 8px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  transition: transform var(--transition), border-color 0.3s ease, box-shadow 0.3s ease;
   cursor: pointer;
+  display: block;
 }
 
 .gallery img:hover {
-  transform: scale(1.05) translateY(-5px);
-  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+  transform: scale(1.03) translateY(-4px);
+  border-color: rgba(232, 201, 126, 0.4);
+  box-shadow: 0 12px 40px rgba(0,0,0,0.5);
+}
+
+/* -------------------
+   フォーム
+------------------- */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1.25rem;
+}
+
+label {
+  font-size: 0.85rem;
+  color: var(--muted);
+  letter-spacing: 0.04em;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  color: var(--text);
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.9rem;
+  width: 100%;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: var(--accent2);
+  box-shadow: 0 0 0 3px rgba(232, 201, 126, 0.1);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+button[type="submit"] {
+  background: var(--accent);
+  color: #0f0f0f;
+  border: none;
+  border-radius: 8px;
+  padding: 0.75rem 2rem;
+  font-family: 'Zen Maru Gothic', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.25s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+  background: var(--accent2);
+  transform: translateY(-2px);
+}
+
+/* -------------------
+   ヒーロー（index用）
+------------------- */
+.hero {
+  padding: 3rem 0 2rem;
+  position: relative;
+}
+
+.hero-label {
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  display: block;
+}
+
+.hero-desc {
+  font-size: 1rem;
+  color: #999;
+  max-width: 480px;
+  margin-top: 1rem;
 }
 
 /* -------------------
@@ -147,35 +352,49 @@ body.fade-in .member {
 ------------------- */
 footer {
   text-align: center;
-  padding: 1rem;
-  margin-top: 3rem;
-  color: #666;
-  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  color: #444;
+  font-size: 0.8rem;
+  border-top: 1px solid var(--border);
+  letter-spacing: 0.05em;
+  position: relative;
+  z-index: 1;
   opacity: 0;
-  transform: translateY(10px);
-  transition: opacity 0.6s ease-in-out 0.3s, transform 0.6s ease-in-out 0.3s;
+  transition: opacity 0.6s ease 0.4s;
 }
 
 body.fade-in footer {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* -------------------
    スマホ対応
 ------------------- */
-@media (max-width: 600px) {
+@media (max-width: 640px) {
+  :root {
+    --nav-height: 56px;
+  }
+
+  nav ul {
+    gap: 0.1rem;
+    padding: 0 0.75rem;
+  }
+
+  nav ul li a {
+    font-size: 0.78rem;
+    padding: 0.35rem 0.7rem;
+  }
+
   main {
-    margin: 1rem;
-    padding: 1rem;
+    padding-top: calc(var(--nav-height) + 2rem);
   }
 
-  h1, h2 {
-    font-size: 1.4rem;
+  h1 {
+    font-size: 1.8rem;
   }
 
-  p {
-    font-size: 1rem;
+  .members-grid {
+    grid-template-columns: 1fr 1fr;
   }
 
   .gallery {
@@ -183,12 +402,12 @@ body.fade-in footer {
   }
 
   .gallery img {
-    height: auto;
-  }
-
-  nav ul li a {
-    font-size: 0.75rem;
-    padding: 0.3rem 0.5rem;
+    height: 180px;
   }
 }
 
+@media (max-width: 380px) {
+  .members-grid {
+    grid-template-columns: 1fr;
+  }
+}
