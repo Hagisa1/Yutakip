@@ -5,36 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>活動内容 - ゆたキプ</title>
   <link rel="icon" href="yutakip.png" type="image/png" />
-  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic:wght@400;500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* about.html と同じフェードイン＋アニメーション CSS をコピー */
-  </style>
 </head>
 <body>
   <nav>
     <ul>
       <li><a href="index.html">ホーム</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="works.html">活動内容</a></li>
+      <li><a href="about.html">メンバー</a></li>
+      <li><a href="works.html" class="active">活動内容</a></li>
       <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
   </nav>
 
   <main>
-    <h1>活動内容</h1>
-    <p>ゆたキプのメンバーが行う創作活動やイベント情報などを紹介します。</p>
+    <section>
+      <span class="hero-label">Works</span>
+      <h1>活動<span class="accent">内容</span></h1>
+      <p class="lead">ゆたキプのメンバーが行う創作活動やイベント情報などを紹介します。</p>
+    </section>
 
-    <section class="gallery" style="margin-top: 2rem;">
+    <section>
       <h2>作品一覧</h2>
-      <img src="works1.jpg" alt="作品1" class="member">
-      <img src="works2.jpg" alt="作品2" class="member">
-      <img src="works3.jpg" alt="作品3" class="member">
+      <div class="gallery">
+        <img src="works1.jpg" alt="作品1" class="member">
+        <img src="works2.jpg" alt="作品2" class="member">
+        <img src="works3.jpg" alt="作品3" class="member">
+      </div>
     </section>
   </main>
 
   <footer>
-    &copy;ゆったりキプフェル眺める会
+    &copy; ゆったりキプフェル眺める会
   </footer>
 
   <script>
@@ -44,7 +46,7 @@
     document.querySelectorAll('a').forEach(link => {
       link.addEventListener('click', function(e) {
         const url = new URL(this.href);
-        if(url.origin === window.location.origin && url.pathname !== window.location.pathname){
+        if (url.origin === window.location.origin && url.pathname !== window.location.pathname) {
           e.preventDefault();
           document.body.style.opacity = 0;
           setTimeout(() => { window.location = this.href; }, 600);
@@ -54,4 +56,3 @@
   </script>
 </body>
 </html>
-
