@@ -1,32 +1,54 @@
-/* リセット */
+/* -------------------
+   リセット
+------------------- */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* 全体フォントと背景 */
+/* -------------------
+   全体フォントと背景
+------------------- */
 body {
   font-family: 'Zen Maru Gothic', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #f0f0f0;
   color: #333;
   line-height: 1.6;
+
+  /* ページ読み込みフェードイン用 */
+  opacity: 0;
+  transition: opacity 0.6s ease-in-out;
 }
 
-/* ナビゲーションバー */
+body.fade-in {
+  opacity: 1;
+}
+
+/* -------------------
+   ナビゲーションバー
+------------------- */
 nav {
   background-color: #333;
   padding: 1rem 2rem;
   position: sticky;
   top: 0;
   z-index: 100;
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 0.6s ease-in-out 0.1s, transform 0.6s ease-in-out 0.1s;
+}
+
+body.fade-in nav {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 nav ul {
   list-style: none;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;   /* ← これで折り返し対応 */
+  flex-wrap: wrap;
   gap: 1rem;
   padding: 0;
   margin: 0;
@@ -40,17 +62,20 @@ nav ul li a {
   font-weight: bold;
   font-size: 1rem;
   white-space: nowrap;
-  transition: background-color 0.3s ease, color 0.3s ease;
   border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 nav ul li a:hover,
 nav ul li a:focus {
   background-color: #ff6600;
   color: white;
+  transform: scale(1.1) rotate(-2deg);
 }
 
-/* メイン */
+/* -------------------
+   メイン
+------------------- */
 main {
   max-width: 900px;
   margin: 2rem auto;
@@ -58,13 +83,43 @@ main {
   padding: 2rem;
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-in-out 0.2s, transform 0.6s ease-in-out 0.2s;
 }
 
-h1, h2 {
-  margin-bottom: 1rem;
+body.fade-in main {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* ギャラリー */
+/* -------------------
+   メンバー・ギャラリー順番フェード
+------------------- */
+.member {
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-in-out, transform 0.6s ease-in-out;
+}
+
+body.fade-in .member {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 個別遅延 */
+.member:nth-child(1) { transition-delay: 0.3s; }
+.member:nth-child(2) { transition-delay: 0.4s; }
+.member:nth-child(3) { transition-delay: 0.5s; }
+.member:nth-child(4) { transition-delay: 0.6s; }
+.member:nth-child(5) { transition-delay: 0.7s; }
+.member:nth-child(6) { transition-delay: 0.8s; }
+.member:nth-child(7) { transition-delay: 0.9s; }
+.member:nth-child(8) { transition-delay: 1s; }
+
+/* -------------------
+   ギャラリー
+------------------- */
 .gallery {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
@@ -78,24 +133,37 @@ h1, h2 {
   object-fit: cover;
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-  transition: transform 0.3s ease;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
   cursor: pointer;
 }
 
 .gallery img:hover {
-  transform: scale(1.05);
+  transform: scale(1.05) translateY(-5px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
 }
 
-/* フッター */
+/* -------------------
+   フッター
+------------------- */
 footer {
   text-align: center;
   padding: 1rem;
   margin-top: 3rem;
   color: #666;
   font-size: 0.9rem;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.6s ease-in-out 0.3s, transform 0.6s ease-in-out 0.3s;
 }
 
-/* スマホ対応 */
+body.fade-in footer {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------
+   スマホ対応
+------------------- */
 @media (max-width: 600px) {
   main {
     margin: 1rem;
@@ -119,7 +187,7 @@ footer {
   }
 
   nav ul li a {
-    font-size: 0.75rem; 
+    font-size: 0.75rem;
     padding: 0.3rem 0.5rem;
   }
 }

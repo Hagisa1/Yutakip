@@ -3,42 +3,56 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ゆたキプへようこそ</title>
-
-  <!-- ファビコン（ブラウザのタブに表示されるアイコン） -->
+  <title>ホーム - ゆたキプ</title>
   <link rel="icon" href="yutakip.png" type="image/png" />
-
-  <!-- Google Fonts（かわいい日本語フォント） -->
   <link href="https://fonts.googleapis.com/css2?family=Zen+Maru+Gothic&display=swap" rel="stylesheet" />
-
-  <!-- 外部CSS -->
   <link rel="stylesheet" href="style.css" />
+  <style>
+    /* about.html と同じフェードイン＋アニメーション CSS をコピー */
+  </style>
 </head>
 <body>
-
-  <!-- ナビゲーションメニュー -->
   <nav>
     <ul>
-      <li><a href="/">ホーム</a></li>
-      <li><a href="/about.html">メンバー</a></li>
-      <li><a href="/works.html">活動内容</a></li>
-      <li><a href="/contact.html">お問い合わせ</a></li>
+      <li><a href="index.html">ホーム</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="works.html">活動内容</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
     </ul>
   </nav>
 
-  <!-- メインコンテンツ -->
   <main>
-    <section id="about">
-      <h1>ようこそ、ゆたキプの公式サイトへ</h1>
-      <p>ここではメンバー紹介や作品をご覧いただけます。気ままに活動中🎨🦇</p>
+    <section>
+      <h1>ゆたキプへようこそ</h1>
+      <p>創作・発信活動を行うグループ「ゆたキプ」の公式サイトです。</p>
+    </section>
+
+    <section class="gallery" style="margin-top: 2rem;">
+      <h2>ギャラリー</h2>
+      <img src="example1.jpg" alt="作品1" class="member">
+      <img src="example2.jpg" alt="作品2" class="member">
+      <img src="example3.jpg" alt="作品3" class="member">
     </section>
   </main>
 
-  <!-- フッター -->
   <footer>
     &copy;ゆったりキプフェル眺める会
   </footer>
 
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      document.body.classList.add('fade-in');
+    });
+    document.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', function(e) {
+        const url = new URL(this.href);
+        if(url.origin === window.location.origin && url.pathname !== window.location.pathname){
+          e.preventDefault();
+          document.body.style.opacity = 0;
+          setTimeout(() => { window.location = this.href; }, 600);
+        }
+      });
+    });
+  </script>
 </body>
 </html>
-
