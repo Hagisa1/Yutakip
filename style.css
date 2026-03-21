@@ -90,10 +90,27 @@ nav ul {
   list-style: none;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-end;
   height: 100%;
   gap: 0.25rem;
-  padding: 0 2rem;
+  padding: 0 1.5rem;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.nav-logo {
+  position: absolute;
+  left: 1.5rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.nav-logo a {
+  padding: 0 !important;
+  border: none !important;
+  background: none !important;
+  display: block;
 }
 
 nav ul li a {
