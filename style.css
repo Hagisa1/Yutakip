@@ -43,11 +43,6 @@ body {
   line-height: 1.75;
   min-height: 100vh;
   overflow-x: hidden;
-  transition: opacity 0.42s cubic-bezier(0.4, 0, 0.2, 1);
-}
-
-body.is-leaving {
-  opacity: 0;
 }
 
 body::before {

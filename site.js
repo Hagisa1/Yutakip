@@ -1,4 +1,5 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+const prefetchedUrls = new Set();
 
 const isTransitionableLink = (link) => {
   if (!link || link.target === "_blank") {
@@ -24,30 +25,52 @@ const isTransitionableLink = (link) => {
   return url.pathname !== window.location.pathname || url.hash !== window.location.hash;
 };
 
+const prefetchPage = (url) => {
+  const cacheKey = `${url.origin}${url.pathname}`;
+
+  if (prefetchedUrls.has(cacheKey)) {
+    return;
+  }
+
+  prefetchedUrls.add(cacheKey);
+
+  const prefetchLink = document.createElement("link");
+  prefetchLink.rel = "prefetch";
+  prefetchLink.href = url.href;
+  prefetchLink.as = "document";
+  document.head.appendChild(prefetchLink);
+};
+
 document.querySelectorAll("a[href]").forEach((link) => {
-  link.addEventListener("click", (event) => {
-    if (
-      prefersReducedMotion ||
-      event.defaultPrevented ||
-      event.button !== 0 ||
-      event.metaKey ||
-      event.ctrlKey ||
-      event.shiftKey ||
-      event.altKey ||
-      !isTransitionableLink(link)
-    ) {
-      return;
-    }
+  if (!isTransitionableLink(link)) {
+    return;
+  }
 
-    const nextUrl = new URL(link.getAttribute("href"), window.location.href);
+  const nextUrl = new URL(link.getAttribute("href"), window.location.href);
 
-    event.preventDefault();
-    document.body.classList.add("is-leaving");
+  link.addEventListener(
+    "mouseenter",
+    () => {
+      prefetchPage(nextUrl);
+    },
+    { passive: true }
+  );
 
-    window.setTimeout(() => {
-      window.location.href = nextUrl.href;
-    }, 320);
-  });
+  link.addEventListener(
+    "focus",
+    () => {
+      prefetchPage(nextUrl);
+    },
+    { passive: true }
+  );
+
+  link.addEventListener(
+    "touchstart",
+    () => {
+      prefetchPage(nextUrl);
+    },
+    { passive: true }
+  );
 });
 
 document.querySelectorAll("form[data-static-form]").forEach((form) => {
@@ -56,6 +79,18 @@ document.querySelectorAll("form[data-static-form]").forEach((form) => {
   });
 });
 
-window.addEventListener("pageshow", () => {
-  document.body.classList.remove("is-leaving");
-});
+const scheduleWarmup = () => {
+  document.querySelectorAll("nav a[href]").forEach((link) => {
+    if (!isTransitionableLink(link)) {
+      return;
+    }
+
+    prefetchPage(new URL(link.getAttribute("href"), window.location.href));
+  });
+};
+
+if ("requestIdleCallback" in window) {
+  window.requestIdleCallback(scheduleWarmup, { timeout: 1200 });
+} else {
+  window.setTimeout(scheduleWarmup, 500);
+}
