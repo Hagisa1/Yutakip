@@ -34,7 +34,7 @@ html {
 }
 
 body {
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: "Yusei Magic", sans-serif;
   background:
     radial-gradient(circle at 8% 8%, rgba(207, 178, 122, 0.18), transparent 32%),
     radial-gradient(circle at 90% 14%, rgba(186, 149, 92, 0.12), transparent 18%),
@@ -153,7 +153,7 @@ section {
 }
 
 h1 {
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: "Yusei Magic", sans-serif;
   font-size: clamp(2.5rem, 6vw, 4.4rem);
   line-height: 1.08;
   letter-spacing: -0.03em;
@@ -165,7 +165,7 @@ h1 .accent {
 }
 
 h2 {
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: "Yusei Magic", sans-serif;
   font-size: clamp(1.45rem, 3vw, 2.1rem);
   line-height: 1.2;
   color: var(--text);
@@ -568,7 +568,7 @@ footer {
 }
 
 .showcase-stat strong {
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: "Yusei Magic", sans-serif;
   font-size: 2rem;
   line-height: 1;
   color: var(--accent-strong);
@@ -624,7 +624,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-family: "Zen Maru Gothic", sans-serif;
+  font-family: "Yusei Magic", sans-serif;
   font-size: 1.55rem;
   color: var(--accent);
   flex-shrink: 0;
