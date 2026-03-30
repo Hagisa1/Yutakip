@@ -1,6 +1,5 @@
 const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const prefetchedUrls = new Set();
-const faviconVersion = "v=2";
 
 const isTransitionableLink = (link) => {
   if (!link || link.target === "_blank") {
@@ -40,28 +39,6 @@ const prefetchPage = (url) => {
   prefetchLink.href = url.href;
   prefetchLink.as = "document";
   document.head.appendChild(prefetchLink);
-};
-
-const ensureFavicon = () => {
-  const iconHref = `./favicon-32.png?${faviconVersion}`;
-  const touchHref = `./apple-touch-icon.png?${faviconVersion}`;
-
-  [
-    ['link[rel="icon"]', { rel: "icon", href: iconHref, type: "image/png", sizes: "32x32" }],
-    ['link[rel="shortcut icon"]', { rel: "shortcut icon", href: iconHref, type: "image/png" }],
-    ['link[rel="apple-touch-icon"]', { rel: "apple-touch-icon", href: touchHref, sizes: "180x180" }],
-  ].forEach(([selector, attributes]) => {
-    let link = document.head.querySelector(selector);
-
-    if (!link) {
-      link = document.createElement("link");
-      document.head.appendChild(link);
-    }
-
-    Object.entries(attributes).forEach(([key, value]) => {
-      link.setAttribute(key, value);
-    });
-  });
 };
 
 document.querySelectorAll("a[href]").forEach((link) => {
@@ -117,5 +94,3 @@ if ("requestIdleCallback" in window) {
 } else {
   window.setTimeout(scheduleWarmup, 500);
 }
-
-ensureFavicon();
