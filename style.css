@@ -609,6 +609,11 @@ footer {
   gap: 0.9rem;
 }
 
+.member-card {
+  display: grid;
+  gap: 0.9rem;
+}
+
 .member-avatar {
   width: 58px;
   height: 58px;
@@ -651,8 +656,43 @@ footer {
   text-transform: uppercase;
 }
 
+.member-info-list {
+  list-style: none;
+  display: grid;
+  gap: 0.5rem;
+}
+
+.member-info-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.58rem;
+  padding: 0.42rem 0.6rem;
+  border-radius: 12px;
+  border: 1px solid rgba(169, 120, 60, 0.12);
+  background: rgba(255, 255, 255, 0.64);
+  color: var(--copy);
+  font-size: 0.84rem;
+}
+
+.member-info-label {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 2.4rem;
+  padding: 0.14rem 0.44rem;
+  border-radius: 999px;
+  border: 1px solid rgba(169, 120, 60, 0.18);
+  background: rgba(169, 120, 60, 0.08);
+  color: var(--accent-strong);
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  line-height: 1.2;
+}
+
 .member-bio {
-  padding-top: 1rem;
+  padding-top: 0.95rem;
+  margin-top: 0.1rem;
   border-top: 1px solid rgba(81, 60, 32, 0.08);
   color: var(--copy);
 }
