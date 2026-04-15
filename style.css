@@ -262,6 +262,79 @@ footer {
   margin-top: 1.7rem;
 }
 
+.latest-feed {
+  margin-top: 1.1rem;
+  padding: 1rem 1.1rem;
+  border-radius: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.56);
+  background: rgba(255, 255, 255, 0.34);
+  backdrop-filter: blur(12px) saturate(1.2);
+  -webkit-backdrop-filter: blur(12px) saturate(1.2);
+  box-shadow: 0 12px 24px rgba(61, 43, 20, 0.12);
+}
+
+.latest-feed-head {
+  display: flex;
+  align-items: center;
+  gap: 0.52rem;
+  margin-bottom: 0.68rem;
+}
+
+.latest-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 3.9rem;
+  padding: 0.16rem 0.56rem;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.58);
+  background: rgba(169, 120, 60, 0.16);
+  color: var(--accent-strong);
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.latest-title {
+  font-size: 0.98rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.latest-list {
+  list-style: none;
+  display: grid;
+  gap: 0.48rem;
+}
+
+.latest-list li {
+  display: grid;
+  grid-template-columns: 5.9rem minmax(0, 1fr);
+  gap: 0.72rem;
+  align-items: start;
+  padding: 0.4rem 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.42);
+}
+
+.latest-list li:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.latest-date {
+  color: var(--accent-strong);
+  font-size: 0.74rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.latest-list p {
+  color: var(--copy);
+  font-size: 0.84rem;
+  line-height: 1.62;
+}
+
 .button-link {
   display: inline-flex;
   align-items: center;
@@ -931,6 +1004,11 @@ footer {
 
   .note-card {
     flex-direction: column;
+  }
+
+  .latest-list li {
+    grid-template-columns: 1fr;
+    gap: 0.18rem;
   }
 }
 
