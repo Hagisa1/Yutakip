@@ -441,6 +441,14 @@ footer {
   animation-delay: 0.49s;
 }
 
+.member-card:nth-child(5) {
+  animation-delay: 0.57s;
+}
+
+.member-card:nth-child(6) {
+  animation-delay: 0.65s;
+}
+
 .contact-card:nth-child(1) {
   animation-delay: 0.25s;
 }
