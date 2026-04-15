@@ -87,7 +87,7 @@ nav ul {
   max-width: 1120px;
   height: 100%;
   margin: 0 auto;
-  padding: 0 1.5rem 0 15rem;
+  padding: 0 1.5rem 0 12.5rem;
 }
 
 .nav-logo {
@@ -105,7 +105,7 @@ nav ul {
 
 .nav-logo img {
   display: block;
-  height: 100px;
+  height: 70px;
   width: auto;
 }
 
@@ -883,7 +883,7 @@ footer {
 
 @media (max-width: 960px) {
   nav ul {
-    padding-left: 13rem;
+    padding-left: 11rem;
   }
 
   .hero,
