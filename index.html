@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ホーム - ゆたキプ</title>
+  <meta name="description" content="VRChatグループ「ゆったりキプフェル眺める会（ゆたキプ）」の公式サイト。活動内容、モデレーター、お問い合わせをご案内します。" />
+  <link rel="icon" href="./favicon.ico?v=3" sizes="any" />
+  <link rel="shortcut icon" href="./favicon.ico?v=3" type="image/x-icon" />
+  <link rel="apple-touch-icon" href="./apple-touch-icon.png?v=3" sizes="180x180" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&amp;display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <script src="site.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">本文へスキップ</a>
+  <nav aria-label="メインナビゲーション">
+    <ul>
+      <li class="nav-logo">
+        <a href="index.html">
+          <img src="nav_logo.png?v=3" alt="ゆったりキプフェル眺める会" width="256" height="256" />
+        </a>
+      </li>
+      <li><a href="index.html" class="active" aria-current="page">ホーム</a></li>
+      <li><a href="about.html">モデレーター</a></li>
+      <li><a href="works.html">活動内容</a></li>
+      <li><a href="contact.html">お問い合わせ</a></li>
+    </ul>
+  </nav>
+
+  <main id="main-content" tabindex="-1">
+    <section class="hero">
+      <div class="hero-copy">
+        <span class="hero-label">Home</span>
+        <h1>ゆったりと<span class="accent">眺める</span>場所。</h1>
+        <p class="lead">VRChatグループ・ゆったりキプフェル眺める会「ゆたキプ」のサイト</p>
+        <div class="hero-actions">
+          <a href="about.html" class="button-link">モデレーターを見る</a>
+          <a href="works.html" class="button-link secondary">活動内容へ</a>
+        </div>
+        <div class="latest-feed" aria-label="最新情報">
+          <div class="latest-feed-head">
+            <span class="latest-badge">Latest</span>
+            <p class="latest-title">最近の更新</p>
+          </div>
+          <ul class="latest-list">
+            <li>
+              <time class="latest-date" datetime="2026-04-15">2026.04.15</time>
+              <p>モデレーターカードを6名構成に整理し、カード表示の統一感を調整しました。</p>
+            </li>
+            <li>
+              <time class="latest-date" datetime="2026-04-15">2026.04.15</time>
+              <p>ナビ左上のアイコンを新しいロゴへ差し替え、表示サイズも調整しました。</p>
+            </li>
+            <li>
+              <time class="latest-date" datetime="2026-04-15">2026.04.15</time>
+              <p>全体UIをガラス調に再設計しつつ、元の暖色トーンへ戻して見やすく整えました。</p>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <aside class="hero-panel">
+        <span class="hero-panel-mark">Yutakip</span>
+        <div class="hero-panel-logo">
+          <img src="yutakip_logo.png" alt="ゆったりキプフェル眺める会ロゴ" width="400" height="113" fetchpriority="high" />
+        </div>
+        <div class="hero-meta">
+          <div class="hero-meta-item">
+            <span>Theme</span>
+            <strong>ゆったりとした空気で、キプフェルを眺められる場所</strong>
+          </div>
+          <div class="hero-meta-item">
+            <span>Focus</span>
+            <strong>モデレーター紹介・活動記録・お問い合わせ</strong>
+          </div>
+        </div>
+      </aside>
+    </section>
+
+    <section>
+      <div class="section-intro">
+        <span class="hero-label">Pickup</span>
+        <h2>サイトの入口を分かりやすく</h2>
+        <p class="section-subcopy">壊れていた仮ギャラリーをやめて、今ある情報でも自然に成立するカード構成に変更しています。</p>
+      </div>
+
+      <div class="showcase-grid">
+        <article class="showcase-card showcase-card--accent">
+          <div class="showcase-visual">
+            <img src="yutakip_logo.png" alt="" width="400" height="113" loading="lazy" decoding="async" />
+          </div>
+          <span class="showcase-kicker">Members</span>
+          <h3 class="showcase-title">モデレーター紹介</h3>
+          <p class="showcase-copy">プロフィールが仮の状態でもプレースホルダー感が出すぎないよう、カードとして整えています。</p>
+          <ul class="showcase-list">
+            <li>役割がすぐ分かる構成</li>
+            <li>あとから紹介文を足しやすい</li>
+          </ul>
+          <a href="about.html" class="showcase-link">モデレーターページへ</a>
+        </article>
+
+        <article class="showcase-card showcase-card--soft">
+          <div class="showcase-visual showcase-visual--plain">
+            <div class="showcase-stat">
+              <span>Current</span>
+              <strong>03</strong>
+              <p>活動内容の見せ方をカード化して、画像がなくても破綻しない状態にしました。</p>
+            </div>
+          </div>
+          <span class="showcase-kicker">Works</span>
+          <h3 class="showcase-title">活動の見せ方</h3>
+          <p class="showcase-copy">作品一覧のように見えて画像が壊れていた部分を、説明つきの紹介カードに差し替えています。</p>
+          <ul class="showcase-list">
+            <li>更新しやすい文章ベース</li>
+            <li>今後の作品追加にも対応しやすい</li>
+          </ul>
+          <a href="works.html" class="showcase-link">活動内容を見る</a>
+        </article>
+
+        <article class="showcase-card">
+          <div class="showcase-visual showcase-visual--plain">
+            <div class="showcase-stat">
+              <span>Ready</span>
+              <strong>Mail</strong>
+              <p>画像なしでも成立するよう、情報の要点を文字で見せる形にしています。</p>
+            </div>
+          </div>
+          <span class="showcase-kicker">Contact</span>
+          <h3 class="showcase-title">お問い合わせ導線</h3>
+          <p class="showcase-copy">フォーム自体はまだ接続前でも、その状態が分かるように見せ方を調整しています。</p>
+          <ul class="showcase-list">
+            <li>送信機能の準備中を明示</li>
+            <li>後から実装しやすいフォーム構成</li>
+          </ul>
+          <a href="contact.html" class="showcase-link">お問い合わせへ</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; ゆったりキプフェル眺める会
+  </footer>
+</body>
+</html>
