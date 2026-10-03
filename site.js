@@ -56,9 +56,3 @@ document.querySelectorAll("a[href]").forEach((link) => {
   link.addEventListener("pointerenter", prefetchOnIntent, { passive: true });
   link.addEventListener("focus", prefetchOnIntent, { passive: true });
 });
-
-document.querySelectorAll("form[data-static-form]").forEach((form) => {
-  form.addEventListener("submit", (event) => {
-    event.preventDefault();
-  });
-});

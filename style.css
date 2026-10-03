@@ -320,42 +320,17 @@ footer {
 }
 
 .latest-title {
+  margin: 0;
   font-size: 0.98rem;
   font-weight: 700;
   color: var(--text);
 }
 
-.latest-list {
-  list-style: none;
-  display: grid;
-  gap: 0.48rem;
-}
-
-.latest-list li {
-  display: grid;
-  grid-template-columns: 5.9rem minmax(0, 1fr);
-  gap: 0.72rem;
-  align-items: start;
-  padding: 0.4rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.42);
-}
-
-.latest-list li:first-child {
-  border-top: none;
-  padding-top: 0;
-}
-
-.latest-date {
-  color: var(--accent-strong);
-  font-size: 0.74rem;
-  font-weight: 700;
-  letter-spacing: 0.06em;
-}
-
-.latest-list p {
-  color: var(--copy);
-  font-size: 0.84rem;
-  line-height: 1.62;
+.latest-feed .button-link {
+  min-width: 0;
+  margin-top: 0.65rem;
+  padding: 0.55rem 0.9rem;
+  font-size: 0.82rem;
 }
 
 .button-link {
@@ -465,8 +440,7 @@ footer {
 }
 
 .hero-panel-mark,
-.showcase-kicker,
-.info-line span {
+.showcase-kicker {
   display: inline-block;
   color: var(--muted);
   font-size: 0.72rem;
@@ -827,127 +801,12 @@ footer {
   line-height: 1.2;
 }
 
-.member-bio {
-  padding-top: 0.95rem;
-  margin-top: 0.1rem;
-  border-top: 1px solid rgba(255, 255, 255, 0.52);
-  color: var(--copy);
-}
-
 .contact-card h2 {
   margin-bottom: 0.65rem;
 }
 
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.42rem;
-  margin-bottom: 1.05rem;
-}
-
-label {
-  color: var(--copy-soft);
-  font-size: 0.84rem;
-  font-weight: 700;
-  letter-spacing: 0.04em;
-}
-
-input[type="text"],
-input[type="email"],
-textarea {
-  width: 100%;
-  padding: 0.82rem 1rem;
-  border: 1px solid rgba(255, 255, 255, 0.58);
-  border-radius: 16px;
-  background: rgba(255, 255, 255, 0.44);
-  color: var(--text);
-  font: inherit;
-  outline: none;
-  backdrop-filter: blur(8px) saturate(1.2);
-  -webkit-backdrop-filter: blur(8px) saturate(1.2);
-  transition:
-    border-color var(--transition),
-    box-shadow var(--transition),
-    background var(--transition);
-}
-
-input[type="text"]:focus,
-input[type="email"]:focus,
-textarea:focus {
-  border-color: rgba(255, 255, 255, 0.76);
-  box-shadow: 0 0 0 4px rgba(169, 120, 60, 0.2);
-  background: rgba(255, 255, 255, 0.64);
-}
-
-textarea {
-  resize: vertical;
-  min-height: 150px;
-}
-
-button[type="submit"] {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  min-width: 220px;
-  padding: 0.85rem 1.15rem;
-  border: 1px solid rgba(255, 255, 255, 0.62);
-  border-radius: 999px;
-  background: linear-gradient(155deg, rgba(184, 138, 83, 0.9) 0%, rgba(156, 110, 58, 0.9) 100%);
-  color: #ffffff;
-  font: inherit;
-  font-weight: 700;
-  cursor: pointer;
-  box-shadow: 0 14px 26px rgba(96, 63, 28, 0.24);
-  backdrop-filter: blur(10px) saturate(1.2);
-  -webkit-backdrop-filter: blur(10px) saturate(1.2);
-  transition:
-    transform var(--transition),
-    background var(--transition),
-    opacity var(--transition),
-    box-shadow var(--transition);
-}
-
-button[type="submit"]:hover {
-  background: linear-gradient(155deg, rgba(156, 110, 58, 0.95) 0%, rgba(127, 88, 40, 0.95) 100%);
-  transform: translateY(-2px);
-  box-shadow: 0 18px 30px rgba(86, 56, 24, 0.28);
-}
-
-button[disabled] {
-  opacity: 0.58;
-  cursor: not-allowed;
-  transform: none;
-}
-
-button[disabled]:hover {
-  background: linear-gradient(155deg, rgba(184, 138, 83, 0.9) 0%, rgba(156, 110, 58, 0.9) 100%);
-  transform: none;
-}
-
-.contact-note {
-  margin-top: 0.95rem;
-  color: var(--copy-soft);
-  font-size: 0.84rem;
-}
-
-.contact-actions {
-  display: grid;
-  gap: 0.85rem;
+.contact-card .button-link {
   margin-top: 1rem;
-}
-
-.info-line {
-  padding: 0.95rem 1rem;
-  border-radius: 18px;
-  border: 1px solid rgba(255, 255, 255, 0.56);
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.48) 0%, rgba(248, 243, 236, 0.36) 100%);
-}
-
-.info-line strong {
-  display: block;
-  margin-top: 0.18rem;
-  color: var(--text);
-  font-size: 0.95rem;
 }
 
 footer {
@@ -1027,11 +886,6 @@ footer {
 
   .note-card {
     flex-direction: column;
-  }
-
-  .latest-list li {
-    grid-template-columns: 1fr;
-    gap: 0.18rem;
   }
 }
 
