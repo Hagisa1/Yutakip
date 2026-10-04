@@ -771,6 +771,11 @@ footer {
   margin-top: 0.75rem;
 }
 
+.world-promo .button-link {
+  align-self: flex-start;
+  margin-top: 1.1rem;
+}
+
 .world-update-card {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.54), rgba(247, 239, 229, 0.46));
 }
