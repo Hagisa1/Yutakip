@@ -48,6 +48,43 @@ body {
   overflow-x: hidden;
 }
 
+.autumn-leaves {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+  contain: strict;
+}
+
+.autumn-leaf {
+  position: absolute;
+  top: 0;
+  left: var(--leaf-x);
+  width: var(--leaf-width);
+  height: var(--leaf-height);
+  opacity: var(--leaf-opacity);
+  background: var(--leaf-color);
+  clip-path: polygon(
+    50% 0%, 60% 18%, 77% 6%, 74% 28%, 98% 24%, 82% 43%,
+    100% 54%, 78% 59%, 85% 81%, 62% 72%, 53% 100%, 47% 100%,
+    38% 72%, 15% 81%, 22% 59%, 0 54%, 18% 43%, 2% 24%,
+    26% 28%, 23% 6%, 40% 18%
+  );
+  animation: leaf-fall var(--leaf-duration) linear var(--leaf-delay) infinite;
+}
+
+.autumn-leaf::after {
+  position: absolute;
+  top: 43%;
+  left: 49%;
+  width: 1px;
+  height: 53%;
+  background: rgba(92, 49, 25, 0.4);
+  content: "";
+  transform: rotate(8deg);
+}
+
 a {
   color: inherit;
 }
@@ -825,6 +862,24 @@ footer {
   }
 }
 
+@keyframes leaf-fall {
+  0% {
+    transform: translate3d(0, -18vh, 0) rotate(0deg);
+  }
+
+  35% {
+    transform: translate3d(var(--leaf-sway-a), 28vh, 0) rotate(160deg);
+  }
+
+  68% {
+    transform: translate3d(var(--leaf-sway-b), 72vh, 0) rotate(330deg);
+  }
+
+  100% {
+    transform: translate3d(var(--leaf-sway-a), 118vh, 0) rotate(540deg);
+  }
+}
+
 @media (max-width: 960px) {
   nav ul {
     padding-left: 11rem;
@@ -918,6 +973,10 @@ footer {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+
+  .autumn-leaves {
+    display: none;
   }
 }
 
