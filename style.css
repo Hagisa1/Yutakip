@@ -800,11 +800,8 @@ footer {
   line-height: 1.4;
 }
 
-.world-link-card .note-title {
-  margin-top: 0.6rem;
-  margin-bottom: 0.6rem;
-  font-size: clamp(1.3rem, 2.5vw, 1.8rem);
-  line-height: 1.2;
+.world-link-button {
+  margin-top: 1.4rem;
 }
 
 .member-header {
