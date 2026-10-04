@@ -753,6 +753,12 @@ footer {
   background: linear-gradient(160deg, rgba(255, 255, 255, 0.54), rgba(247, 239, 229, 0.46));
 }
 
+.world-link-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 240px;
+}
+
 .world-update-card h2 {
   margin-top: 0.6rem;
   font-size: clamp(1.3rem, 2.5vw, 1.8rem);
@@ -801,7 +807,8 @@ footer {
 }
 
 .world-link-button {
-  margin-top: 1.4rem;
+  align-self: flex-start;
+  margin-top: auto;
 }
 
 .member-header {
