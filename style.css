@@ -755,7 +755,7 @@ footer {
 
 .world-link-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 340px) minmax(0, 1fr);
   align-items: center;
   gap: 1.4rem;
 }
