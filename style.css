@@ -762,9 +762,10 @@ footer {
 
 .world-link-image {
   display: block;
-  width: 100%;
-  aspect-ratio: 16 / 9;
+  width: min(100%, 340px);
+  aspect-ratio: 4 / 3;
   object-fit: cover;
+  justify-self: center;
   border: 1px solid rgba(255, 255, 255, 0.64);
   border-radius: 18px;
   box-shadow: 0 14px 28px rgba(61, 43, 20, 0.16);
