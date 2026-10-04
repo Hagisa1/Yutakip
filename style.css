@@ -217,6 +217,12 @@ p {
   align-items: stretch;
 }
 
+.contact-layout {
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 720px;
+  margin-inline: auto;
+}
+
 .hero-copy,
 .hero-panel,
 .page-header,
