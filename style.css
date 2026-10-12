@@ -862,12 +862,59 @@ footer {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84), 0 8px 20px rgba(61, 43, 20, 0.07);
 }
 
+.world-update-topline {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-bottom: 0.65rem;
+}
+
 .world-update-status {
-  display: block;
-  margin-bottom: 0.35rem;
+  display: inline-flex;
   color: var(--muted);
   font-size: 0.76rem;
   font-weight: 700;
+  letter-spacing: 0.06em;
+}
+
+.world-online-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  padding: 0.28rem 0.68rem;
+  border: 1px solid rgba(73, 159, 97, 0.28);
+  border-radius: 999px;
+  background: linear-gradient(145deg, rgba(245, 255, 246, 0.84), rgba(218, 244, 223, 0.58));
+  backdrop-filter: blur(12px) saturate(1.4);
+  -webkit-backdrop-filter: blur(12px) saturate(1.4);
+  color: #356a43;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86), 0 4px 12px rgba(54, 125, 72, 0.08);
+}
+
+.world-online-dot {
+  position: relative;
+  display: inline-block;
+  width: 0.48rem;
+  height: 0.48rem;
+  flex: 0 0 auto;
+  border-radius: 50%;
+  background: #38aa5d;
+  box-shadow: 0 0 0 3px rgba(56, 170, 93, 0.14), 0 0 12px rgba(56, 170, 93, 0.4);
+}
+
+.world-online-dot::after {
+  position: absolute;
+  inset: -0.2rem;
+  border: 1px solid rgba(56, 170, 93, 0.52);
+  border-radius: 50%;
+  content: "";
+  animation: onlinePulse 1.8s ease-out infinite;
 }
 
 .world-update-heading {
@@ -1056,6 +1103,18 @@ footer {
   }
 }
 
+@keyframes onlinePulse {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.65);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(1.9);
+  }
+}
+
 @keyframes leaf-fall {
   0% {
     transform: translate3d(0, -18vh, 0) rotate(0deg);
@@ -1207,6 +1266,7 @@ footer {
   .note-card,
   .note-badge,
   .world-update-entry,
+  .world-online-status,
   .world-update-card,
   .world-link-visual,
   footer {
@@ -1249,6 +1309,7 @@ footer {
   .note-badge,
   .world-update-card,
   .world-update-entry,
+  .world-online-status,
   .world-link-visual,
   footer {
     background: rgba(255, 252, 247, 0.96);
