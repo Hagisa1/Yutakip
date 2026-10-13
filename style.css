@@ -108,7 +108,7 @@ a {
   outline: 3px solid var(--accent-strong);
   outline-offset: 3px;
 }
-nav {
+body > nav {
   position: fixed;
   top: 12px;
   left: 50%;
@@ -126,7 +126,7 @@ nav {
   animation: navArrive 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-nav::before {
+body > nav::before {
   position: absolute;
   inset: 0 1px auto;
   height: 56%;
@@ -136,7 +136,7 @@ nav::before {
   pointer-events: none;
 }
 
-nav ul {
+body > nav ul {
   list-style: none;
   position: relative;
   display: flex;
@@ -169,7 +169,7 @@ nav ul {
   width: auto;
 }
 
-nav ul li a {
+body > nav ul li a {
   position: relative;
   z-index: 1;
   display: inline-flex;
@@ -192,8 +192,8 @@ nav ul li a {
     box-shadow var(--transition);
 }
 
-nav ul li a:hover,
-nav ul li a.active {
+body > nav ul li a:hover,
+body > nav ul li a.active {
   color: var(--accent-strong);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.38));
   border-color: rgba(255, 255, 255, 0.82);
@@ -1211,7 +1211,7 @@ footer {
 }
 
 @media (max-width: 960px) {
-  nav ul {
+  body > nav ul {
     padding-left: 11rem;
   }
 
@@ -1234,7 +1234,7 @@ footer {
     --nav-height: 58px;
   }
 
-  nav {
+  body > nav {
     top: 8px;
     width: calc(100% - 20px);
     height: var(--nav-height);
@@ -1245,13 +1245,13 @@ footer {
     display: none;
   }
 
-  nav ul {
+  body > nav ul {
     justify-content: center;
     gap: 0.18rem;
     padding: 0 0.75rem;
   }
 
-  nav ul li a {
+  body > nav ul li a {
     padding: 0.42rem 0.78rem;
     font-size: 0.78rem;
   }
@@ -1275,12 +1275,12 @@ footer {
 }
 
 @media (max-width: 420px) {
-  nav ul {
+  body > nav ul {
     gap: 0.05rem;
     padding-inline: 0.35rem;
   }
 
-  nav ul li a {
+  body > nav ul li a {
     padding: 0.38rem 0.3rem;
     font-size: 0.7rem;
     letter-spacing: 0;
@@ -1323,8 +1323,8 @@ footer {
 }
 
 @media (prefers-reduced-transparency: reduce) {
-  nav,
-  nav ul li a,
+  body > nav,
+  body > nav ul li a,
   .skip-link,
   .latest-feed,
   .latest-badge,
@@ -1353,7 +1353,7 @@ footer {
     box-shadow: none;
   }
 
-  nav::before,
+  body > nav::before,
   .hero-panel::after,
   .showcase-card::after,
   .member-card::after,
@@ -1365,8 +1365,8 @@ footer {
 }
 
 @supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
-  nav,
-  nav ul li a,
+  body > nav,
+  body > nav ul li a,
   .skip-link,
   .latest-feed,
   .latest-badge,
