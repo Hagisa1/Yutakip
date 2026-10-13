@@ -278,7 +278,6 @@ p {
 .hero-panel,
 .page-header,
 .section-intro,
-.note-card,
 .showcase-card,
 .member-card,
 .contact-card,
@@ -433,8 +432,7 @@ footer {
 .hero-panel,
 .showcase-card,
 .member-card,
-.contact-card,
-.note-card {
+.contact-card {
   position: relative;
   overflow: hidden;
   background: var(--surface);
@@ -449,7 +447,6 @@ footer {
 .showcase-card::after,
 .member-card::after,
 .contact-card::after,
-.note-card::after,
 .world-update-card::after {
   content: "";
   position: absolute;
@@ -464,7 +461,6 @@ footer {
 .showcase-card > *,
 .member-card > *,
 .contact-card > *,
-.note-card > *,
 .world-update-card > * {
   position: relative;
   z-index: 1;
@@ -748,43 +744,6 @@ footer {
   font-size: 0.82rem;
 }
 
-.note-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 1rem;
-  padding: 1.25rem 1.35rem;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.68), rgba(255, 255, 255, 0.3) 52%, rgba(246, 239, 230, 0.44));
-  animation-delay: 0.16s;
-}
-
-.activity-feed-card {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr);
-  gap: 1rem;
-}
-
-.activity-feed-heading {
-  display: flex;
-  align-items: center;
-  gap: 0.85rem;
-}
-
-.activity-feed-heading .note-badge {
-  margin: 0;
-}
-
-.activity-feed-heading .note-title {
-  margin: 0;
-}
-
-.activity-feed-card > .activity-notice-copy {
-  margin: 0;
-}
-
-.activity-feed-card > .button-link {
-  justify-self: start;
-}
-
 .world-overview {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
@@ -810,10 +769,6 @@ footer {
   font-weight: 700;
   letter-spacing: 0.16em;
   text-transform: uppercase;
-}
-
-.note-card .button-link {
-  margin-top: 0.65rem;
 }
 
 .world-update-card {
@@ -948,31 +903,6 @@ footer {
 
 .world-update-entry p {
   font-size: 0.9rem;
-}
-
-.note-badge {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2.55rem;
-  height: 2.55rem;
-  border-radius: 18px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(209, 165, 105, 0.26));
-  border: 1px solid rgba(255, 255, 255, 0.8);
-  backdrop-filter: blur(14px) saturate(1.5);
-  -webkit-backdrop-filter: blur(14px) saturate(1.5);
-  color: var(--accent-strong);
-  font-weight: 700;
-  flex-shrink: 0;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 6px 16px rgba(61, 43, 20, 0.08);
-}
-
-.note-title {
-  display: block;
-  margin-bottom: 0.18rem;
-  color: var(--text);
-  font-size: 0.96rem;
-  line-height: 1.4;
 }
 
 .world-link-button {
@@ -1270,10 +1200,6 @@ footer {
   .world-link-card {
     grid-template-columns: minmax(0, 1fr);
   }
-
-  .note-card {
-    flex-direction: column;
-  }
 }
 
 @media (max-width: 420px) {
@@ -1300,7 +1226,6 @@ footer {
   .showcase-card,
   .member-card,
   .contact-card,
-  .note-card,
   .world-update-card {
     border-radius: 20px;
   }
@@ -1342,8 +1267,6 @@ footer {
   .member-info-label,
   .member-info-list li,
   .contact-card,
-  .note-card,
-  .note-badge,
   .world-update-entry,
   .world-online-status,
   .world-update-card,
@@ -1360,7 +1283,6 @@ footer {
   .showcase-card::after,
   .member-card::after,
   .contact-card::after,
-  .note-card::after,
   .world-update-card::after {
     display: none;
   }
@@ -1384,8 +1306,6 @@ footer {
   .member-info-label,
   .member-info-list li,
   .contact-card,
-  .note-card,
-  .note-badge,
   .world-update-card,
   .world-update-entry,
   .world-online-status,
