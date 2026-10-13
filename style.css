@@ -716,12 +716,31 @@ footer {
   padding: 1.1rem;
 }
 
+.showcase-visual--contact {
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 220px;
+}
+
 .showcase-stat {
   position: relative;
   z-index: 1;
   display: flex;
   flex-direction: column;
   gap: 0.18rem;
+}
+
+.showcase-card--contact .showcase-visual {
+  flex: 1;
+}
+
+.showcase-stat--contact {
+  width: 100%;
+}
+
+.showcase-stat--contact .showcase-copy {
+  max-width: none;
+  font-size: 0.9rem;
 }
 
 .showcase-stat span {
