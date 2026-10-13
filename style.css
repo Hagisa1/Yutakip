@@ -776,40 +776,12 @@ footer {
   margin: 0;
 }
 
-.activity-timeline-frame {
-  width: min(100%, 550px);
-  min-width: 0;
-  min-height: 640px;
-  margin-inline: auto;
-  overflow: hidden;
-  border: 1px solid rgba(255, 255, 255, 0.74);
-  border-radius: 18px;
-  background: linear-gradient(145deg, rgba(255, 255, 255, 0.78), rgba(255, 255, 255, 0.5));
-  backdrop-filter: blur(16px) saturate(1.35);
-  -webkit-backdrop-filter: blur(16px) saturate(1.35);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.88), 0 10px 24px rgba(61, 43, 20, 0.08);
+.activity-feed-card > .activity-notice-copy {
+  margin: 0;
 }
 
-.activity-timeline-frame .twitter-timeline {
-  display: block;
-  min-height: 640px;
-  color: var(--accent-strong);
-  font-weight: 700;
-  text-align: center;
-  text-decoration: none;
-}
-
-.activity-timeline-frame iframe {
-  display: block;
-  width: 100% !important;
-  max-width: 100% !important;
-  border-radius: 17px !important;
-}
-
-.activity-timeline-frame noscript {
-  display: block;
-  padding: 1rem;
-  text-align: center;
+.activity-feed-card > .button-link {
+  justify-self: start;
 }
 
 .world-overview {
@@ -1325,7 +1297,6 @@ footer {
   .contact-card,
   .note-card,
   .note-badge,
-  .activity-timeline-frame,
   .world-update-entry,
   .world-online-status,
   .world-update-card,
@@ -1368,7 +1339,6 @@ footer {
   .contact-card,
   .note-card,
   .note-badge,
-  .activity-timeline-frame,
   .world-update-card,
   .world-update-entry,
   .world-online-status,
