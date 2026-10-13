@@ -1136,7 +1136,8 @@ footer {
   height: 21px;
 }
 
-.footer-social-link--discord img {
+.footer-social-link--discord img,
+.footer-social-link--youtube img {
   width: 24px;
   height: 24px;
 }
