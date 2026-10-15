@@ -356,16 +356,16 @@ footer {
   min-width: 3.9rem;
   padding: 0.16rem 0.56rem;
   border-radius: 999px;
-  border: 1px solid rgba(73, 159, 97, 0.28);
-  background: linear-gradient(145deg, rgba(245, 255, 246, 0.86), rgba(218, 244, 223, 0.58));
+  border: 1px solid rgba(65, 167, 197, 0.3);
+  background: linear-gradient(145deg, rgba(246, 253, 255, 0.88), rgba(218, 243, 249, 0.62));
   backdrop-filter: blur(12px) saturate(1.45);
   -webkit-backdrop-filter: blur(12px) saturate(1.45);
-  color: #356a43;
+  color: #286b7d;
   font-size: 0.66rem;
   font-weight: 700;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 5px 14px rgba(54, 125, 72, 0.1);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.9), 0 5px 14px rgba(49, 133, 157, 0.12);
 }
 
 .latest-title {
@@ -911,6 +911,15 @@ footer {
   border-radius: 50%;
   content: "";
   animation: onlinePulse 1.8s ease-out infinite;
+}
+
+.latest-badge .world-online-dot {
+  background: #32adca;
+  box-shadow: 0 0 0 3px rgba(50, 173, 202, 0.16), 0 0 12px rgba(50, 173, 202, 0.42);
+}
+
+.latest-badge .world-online-dot::after {
+  border-color: rgba(50, 173, 202, 0.56);
 }
 
 .world-update-heading {
