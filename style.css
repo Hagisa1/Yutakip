@@ -493,11 +493,10 @@ footer {
   text-transform: uppercase;
 }
 
-.hero-panel-logo {
-  display: flex;
-  justify-content: center;
+.hero-panel-banner {
   margin-top: 0.85rem;
-  padding: 1.15rem;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.76);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34));
@@ -506,10 +505,11 @@ footer {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84), 0 8px 22px rgba(61, 43, 20, 0.08);
 }
 
-.hero-panel-logo img {
+.hero-panel-banner img {
   display: block;
-  width: min(100%, 260px);
-  height: auto;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .hero-meta {
@@ -1364,7 +1364,7 @@ footer {
   .latest-badge,
   .button-link.secondary,
   .hero-panel,
-  .hero-panel-logo,
+  .hero-panel-banner,
   .hero-meta-item,
   .showcase-card,
   .showcase-visual,
@@ -1403,7 +1403,7 @@ footer {
   .latest-badge,
   .button-link.secondary,
   .hero-panel,
-  .hero-panel-logo,
+  .hero-panel-banner,
   .hero-meta-item,
   .showcase-card,
   .showcase-visual,
