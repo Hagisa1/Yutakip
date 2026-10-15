@@ -133,3 +133,24 @@ document.querySelectorAll("a[href]").forEach((link) => {
   link.addEventListener("pointerenter", prefetchOnIntent, { passive: true });
   link.addEventListener("focus", prefetchOnIntent, { passive: true });
 });
+
+const rulesImageDialog = document.querySelector("#rules-image-dialog");
+const rulesImageTrigger = document.querySelector(".rules-poster-link");
+const rulesImageCloseButton = rulesImageDialog?.querySelector(".rules-image-dialog-close");
+
+if (rulesImageDialog && rulesImageTrigger && rulesImageCloseButton) {
+  rulesImageTrigger.addEventListener("click", () => {
+    rulesImageDialog.showModal();
+    rulesImageCloseButton.focus();
+  });
+
+  rulesImageCloseButton.addEventListener("click", () => {
+    rulesImageDialog.close();
+  });
+
+  rulesImageDialog.addEventListener("click", (event) => {
+    if (event.target === rulesImageDialog) {
+      rulesImageDialog.close();
+    }
+  });
+}

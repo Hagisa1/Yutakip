@@ -338,14 +338,74 @@ footer {
 
 .rules-poster-link {
   display: block;
+  width: 100%;
   overflow: hidden;
   border-radius: calc(var(--radius) - 0.6rem);
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: zoom-in;
 }
 
 .rules-poster-link img {
   display: block;
   width: 100%;
   height: auto;
+}
+
+.rules-image-dialog {
+  position: fixed;
+  width: min(94vw, 1440px);
+  max-width: none;
+  max-height: calc(100vh - 2rem);
+  overflow: visible;
+  padding: 0.55rem;
+  border: 1px solid rgba(255, 255, 255, 0.76);
+  border-radius: var(--radius);
+  background: rgba(255, 252, 247, 0.94);
+  box-shadow: 0 28px 90px rgba(20, 15, 10, 0.42), inset 0 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.rules-image-dialog[open] {
+  animation: riseIn 0.22s ease-out both;
+}
+
+.rules-image-dialog::backdrop {
+  background: rgba(25, 20, 16, 0.78);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.rules-image-dialog > img {
+  display: block;
+  width: 100%;
+  max-height: calc(100vh - 3.1rem);
+  object-fit: contain;
+  border-radius: calc(var(--radius) - 0.5rem);
+}
+
+.rules-image-dialog-close {
+  position: absolute;
+  top: 0.9rem;
+  right: 0.9rem;
+  z-index: 1;
+  display: grid;
+  place-items: center;
+  width: 2.8rem;
+  height: 2.8rem;
+  border: 1px solid rgba(255, 255, 255, 0.84);
+  border-radius: 50%;
+  background: rgba(47, 39, 31, 0.76);
+  color: #fff;
+  font: inherit;
+  font-size: 1.8rem;
+  line-height: 1;
+  cursor: pointer;
+  box-shadow: 0 4px 18px rgba(20, 15, 10, 0.28);
+}
+
+.rules-image-dialog-close:hover {
+  background: rgba(47, 39, 31, 0.94);
 }
 
 .rules-poster-card figcaption {

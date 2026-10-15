@@ -77,12 +77,17 @@
       </div>
 
       <figure class="rules-poster-card">
-        <a class="rules-poster-link" href="assets/yutakip-rules.jpg" target="_blank" rel="noopener noreferrer" aria-label="グループルールの画像を拡大して開く">
+        <button class="rules-poster-link" type="button" aria-haspopup="dialog" aria-controls="rules-image-dialog" aria-label="グループルールの画像を拡大して表示">
           <img src="assets/yutakip-rules.jpg" alt="ゆたキプのグループルールを4項目で説明するポスター" width="1920" height="1080" loading="lazy" decoding="async" />
-        </a>
+        </button>
         <figcaption>画像をタップすると拡大して表示できます。</figcaption>
       </figure>
     </section>
+
+    <dialog class="rules-image-dialog" id="rules-image-dialog" aria-label="ゆたキプのグループルールを拡大表示">
+      <button class="rules-image-dialog-close" type="button" aria-label="拡大表示を閉じる">×</button>
+      <img src="assets/yutakip-rules.jpg" alt="ゆたキプのグループルールを4項目で説明するポスター" width="1920" height="1080" decoding="async" />
+    </dialog>
 
   </main>
 
