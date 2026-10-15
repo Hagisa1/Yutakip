@@ -355,6 +355,8 @@ footer {
 
 .rules-image-dialog {
   position: fixed;
+  inset: 0;
+  margin: auto;
   width: min(94vw, 1440px);
   max-width: none;
   max-height: calc(100vh - 2rem);
