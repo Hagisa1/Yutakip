@@ -320,6 +320,38 @@ footer {
   max-width: 42rem;
 }
 
+.rules-poster-card {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: clamp(0.45rem, 1.2vw, 0.85rem);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--shadow-soft);
+  animation: riseIn 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s both;
+}
+
+.rules-poster-link {
+  display: block;
+  overflow: hidden;
+  border-radius: calc(var(--radius) - 0.6rem);
+}
+
+.rules-poster-link img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.rules-poster-card figcaption {
+  margin: 0.6rem 0.2rem 0;
+  color: var(--muted);
+  font-size: 0.76rem;
+  text-align: right;
+}
+
 .hero-actions {
   display: flex;
   flex-wrap: wrap;
@@ -1356,6 +1388,7 @@ footer {
   .contact-card,
   .world-update-entry,
   .world-online-status,
+  .rules-poster-card,
   .world-update-card,
   .world-link-visual,
   footer {
@@ -1393,6 +1426,7 @@ footer {
   .member-info-label,
   .member-info-list li,
   .contact-card,
+  .rules-poster-card,
   .world-update-card,
   .world-update-entry,
   .world-online-status,
