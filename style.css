@@ -496,7 +496,7 @@ footer {
 .hero-panel-banner {
   margin-top: 0.85rem;
   overflow: hidden;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 3 / 1;
   border-radius: 22px;
   border: 1px solid rgba(255, 255, 255, 0.76);
   background: linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.34));
