@@ -154,3 +154,36 @@ if (rulesImageDialog && rulesImageTrigger && rulesImageCloseButton) {
     }
   });
 }
+
+const activityGalleryDialog = document.querySelector("#activity-gallery-dialog");
+const activityGalleryDialogImage = activityGalleryDialog?.querySelector("img");
+const activityGalleryDialogCaption = activityGalleryDialog?.querySelector(".activity-gallery-dialog-caption");
+const activityGalleryCloseButton = activityGalleryDialog?.querySelector(".rules-image-dialog-close");
+
+if (activityGalleryDialog && activityGalleryDialogImage && activityGalleryDialogCaption && activityGalleryCloseButton) {
+  document.querySelectorAll(".activity-gallery-trigger").forEach((trigger) => {
+    trigger.addEventListener("click", () => {
+      const thumbnail = trigger.querySelector("img");
+
+      if (!thumbnail) {
+        return;
+      }
+
+      activityGalleryDialogImage.src = thumbnail.currentSrc || thumbnail.src;
+      activityGalleryDialogImage.alt = thumbnail.alt;
+      activityGalleryDialogCaption.textContent = trigger.dataset.caption || "";
+      activityGalleryDialog.showModal();
+      activityGalleryCloseButton.focus();
+    });
+  });
+
+  activityGalleryCloseButton.addEventListener("click", () => {
+    activityGalleryDialog.close();
+  });
+
+  activityGalleryDialog.addEventListener("click", (event) => {
+    if (event.target === activityGalleryDialog) {
+      activityGalleryDialog.close();
+    }
+  });
+}
