@@ -896,50 +896,6 @@ footer {
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.76), 0 8px 20px rgba(61, 43, 20, 0.06);
 }
 
-.activity-gallery-award-card {
-  display: grid;
-  align-content: center;
-  justify-items: center;
-  gap: 0.45rem;
-  aspect-ratio: 4 / 3;
-  overflow: hidden;
-  padding: 1rem;
-  border: 1px solid rgba(255, 190, 83, 0.42);
-  border-radius: 20px;
-  background:
-    radial-gradient(circle at 50% 0%, rgba(255, 248, 209, 0.9), transparent 55%),
-    linear-gradient(145deg, rgba(255, 255, 255, 0.72), rgba(250, 222, 164, 0.48));
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.86), 0 10px 24px rgba(135, 87, 30, 0.1);
-  text-align: center;
-}
-
-.activity-gallery-award-icon {
-  font-size: 1.8rem;
-  line-height: 1;
-}
-
-.activity-gallery-award-copy {
-  color: var(--copy);
-  font-size: 0.82rem;
-  font-weight: 700;
-  line-height: 1.45;
-}
-
-.activity-gallery-award-copy strong,
-.activity-gallery-award-copy span {
-  display: block;
-}
-
-.activity-gallery-award-copy strong {
-  color: var(--text);
-  font-size: 0.94rem;
-}
-
-.activity-gallery-award-copy span {
-  color: #9a5a19;
-  font-size: 1rem;
-}
-
 .activity-gallery-slot span {
   display: grid;
   width: 2.5rem;
@@ -1435,7 +1391,6 @@ footer {
   .rules-poster-card,
   .rules-image-dialog,
   .activity-gallery-card,
-  .activity-gallery-award-card,
   .activity-gallery-dialog,
   .world-update-card,
   .world-link-visual,
@@ -1480,7 +1435,6 @@ footer {
   .rules-poster-card,
   .rules-image-dialog,
   .activity-gallery-card,
-  .activity-gallery-award-card,
   .activity-gallery-dialog,
   .world-update-card,
   .world-update-entry,
