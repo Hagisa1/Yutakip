@@ -428,13 +428,8 @@ footer {
 }
 
 .latest-feed {
-  display: grid;
-  grid-template-columns: minmax(0, auto) minmax(0, 1fr) auto;
-  align-items: center;
-  gap: 1rem 1.35rem;
-  max-width: 1080px;
-  margin: 0 auto 3.5rem;
-  padding: 1.2rem clamp(1.1rem, 2.5vw, 1.8rem);
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
   border-radius: 18px;
   border: 1px solid rgba(255, 255, 255, 0.72);
   background: rgba(255, 255, 255, 0.34);
@@ -447,12 +442,12 @@ footer {
 .latest-feed-head {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
-  min-width: 0;
+  gap: 0.52rem;
+  margin-bottom: 0.68rem;
 }
 
 .latest-feed > p {
-  min-width: 0;
+  margin: 0;
 }
 
 .latest-badge {
@@ -484,10 +479,9 @@ footer {
 
 .latest-feed .button-link {
   min-width: 0;
-  margin: 0;
+  margin-top: 0.65rem;
   padding: 0.55rem 0.9rem;
   font-size: 0.82rem;
-  white-space: nowrap;
 }
 
 .button-link {
@@ -1194,23 +1188,6 @@ footer {
     grid-template-columns: 1fr;
   }
 
-  .latest-feed {
-    grid-template-columns: minmax(0, 1fr) auto;
-  }
-
-  .latest-feed-head {
-    grid-column: 1;
-  }
-
-  .latest-feed > p {
-    grid-column: 1 / -1;
-  }
-
-  .latest-feed .button-link {
-    grid-column: 2;
-    grid-row: 1;
-  }
-
   .world-overview {
     grid-template-columns: 1fr;
   }
@@ -1249,23 +1226,6 @@ footer {
 
   main {
     padding-top: calc(var(--nav-height) + 2.5rem);
-  }
-
-  .latest-feed {
-    grid-template-columns: 1fr;
-    gap: 0.75rem;
-    padding: 1rem;
-  }
-
-  .latest-feed-head,
-  .latest-feed > p,
-  .latest-feed .button-link {
-    grid-column: auto;
-    grid-row: auto;
-  }
-
-  .latest-feed .button-link {
-    justify-self: start;
   }
 
   .members-grid {
